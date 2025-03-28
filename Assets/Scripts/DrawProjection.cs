@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class DrawProjection : MonoBehaviour
 {
-
-
     CannonController cannonController;
     LineRenderer lineRenderer;
-
-
     //Number of points on line
     public int numPoints = 50;
     //Distance between points
@@ -22,7 +18,6 @@ public class DrawProjection : MonoBehaviour
         cannonController = GetComponent<CannonController>();
         lineRenderer = GetComponent<LineRenderer>();
     }
-
     
     void Update()
     {
@@ -43,8 +38,6 @@ public class DrawProjection : MonoBehaviour
                 break;
             }
         }
-
         lineRenderer.SetPositions(points.ToArray());
-
     }
 }

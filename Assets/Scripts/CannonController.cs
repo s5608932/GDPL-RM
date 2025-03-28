@@ -18,10 +18,13 @@ public class CannonController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, HorizontalRotation * rotationSpeed, VerticalRotation * rotationSpeed));
 
+
+
+        //Fire
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject CreatedCannonball = Instantiate(Cannonball, ShotPoint.position, ShotPoint.rotation);
-            CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.forward * BlastPower;
+            CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * BlastPower;
         }
 
     }
