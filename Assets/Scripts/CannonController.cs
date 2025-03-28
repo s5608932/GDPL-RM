@@ -13,8 +13,9 @@ public class CannonController : MonoBehaviour
 
     private void Update()
     {
-        float HorizontalRotation = Input.GetAxis("Horizontal");
-        float VerticalRotation = Input.GetAxis("Vertical");
+        
+        float HorizontalRotation = Input.GetAxis("Horizontal"); // A or D / Left or Right
+        float VerticalRotation = Input.GetAxis("Vertical"); // W or S / Up or Down
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, HorizontalRotation * rotationSpeed, VerticalRotation * rotationSpeed));
 
@@ -24,7 +25,9 @@ public class CannonController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject CreatedCannonball = Instantiate(Cannonball, ShotPoint.position, ShotPoint.rotation);
+            CreatedCannonball.tag = "Ball";
             CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * BlastPower;
+            Destroy(CreatedCannonball, 10);
         }
 
     }
