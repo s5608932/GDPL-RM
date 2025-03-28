@@ -257,7 +257,8 @@ PrefabInstance:
       value: Cannon-Model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3418614553021540448, guid: ea15ebbf367894f6895777bfe09b2903, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea15ebbf367894f6895777bfe09b2903, type: 3}

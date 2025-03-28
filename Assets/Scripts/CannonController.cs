@@ -16,8 +16,7 @@ public class CannonController : MonoBehaviour
         float HorizontalRotation = Input.GetAxis("Horizontal");
         float VerticalRotation = Input.GetAxis("Vertical");
 
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + 
-            new Vector3(0, HorizontalRotation * rotationSpeed, VerticalRotation * rotationSpeed));
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, HorizontalRotation * rotationSpeed, VerticalRotation * rotationSpeed));
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
