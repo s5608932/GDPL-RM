@@ -11,6 +11,4 @@ public class DestroyBall : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
-
 }

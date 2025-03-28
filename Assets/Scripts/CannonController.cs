@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class CannonController : MonoBehaviour
 {
-    public float rotationSpeed = 1;
+    public float rotationSpeed = 1f;
     public float BlastPower = 25;
-    public int ShotCount = 10;
+    public float ShotCount = 10; // increase by 3 if hit green target
+    public float Xrotate = 0;
+    public float Yrotate = 0;
+    public float GameScore = 0; // increase by 1 if hit blue target
+
 
     public GameObject Cannonball;
     public Transform ShotPoint;
@@ -16,7 +20,11 @@ public class CannonController : MonoBehaviour
     {
         
         float HorizontalRotation = Input.GetAxis("Horizontal"); // A or D / Left or Right
-        float VerticalRotation = Input.GetAxis("Vertical"); // W or S / Up or Down
+        float VerticalRotation = -Input.GetAxis("Vertical"); // W or S / Up or Down
+
+        Xrotate = Mathf.Clamp((Xrotate += (HorizontalRotation*rotationSpeed)), -90, 90);
+        Yrotate = Mathf.Clamp((Yrotate += (VerticalRotation*rotationSpeed)), -60, 40);
+
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -25,8 +33,9 @@ public class CannonController : MonoBehaviour
             {
                 BlastPower = 0;
             }
-            
         }
+
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             BlastPower += 5;
@@ -37,7 +46,7 @@ public class CannonController : MonoBehaviour
         }
 
 
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0, HorizontalRotation * rotationSpeed, VerticalRotation * rotationSpeed));
+        transform.rotation = Quaternion.Euler(new Vector3(0, Xrotate+90, Yrotate));
 
 
         //Fire
@@ -50,10 +59,7 @@ public class CannonController : MonoBehaviour
             Destroy(CreatedCannonball, 10);
         }
 
-
-
-
-
     }
 
+    
 }
