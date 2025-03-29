@@ -13,8 +13,10 @@ public class HitCapsule : MonoBehaviour
         {
             Destroy(other.gameObject);
             Shots.ShotCount += 3;
-            print($"Shots = {Shots.ShotCount}");
+            print($"Shots + 3 = {Shots.ShotCount}");
         }
+
+
         if (other.gameObject.tag == ("BlueCapsule"))
         {
             Destroy(other.gameObject);

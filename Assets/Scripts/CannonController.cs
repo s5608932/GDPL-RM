@@ -7,12 +7,10 @@ public class CannonController : MonoBehaviour
 {
     public float rotationSpeed = 1f;
     public float BlastPower = 25;
-    public float ShotCount = 10; // increase by 3 if hit green target
     public float Xrotate = 0;
     public float Yrotate = 0;
     public float GameScore = 0; // increase by 1 if hit blue target
-
-
+    public float ShotCount = 10; // increase by 3 if hit green target
     public GameObject Cannonball;
     public Transform ShotPoint;
 
@@ -53,13 +51,12 @@ public class CannonController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && ShotCount > 0)
         {
             ShotCount -= 1;
+            print($"Shots = {ShotCount}");
             GameObject CreatedCannonball = Instantiate(Cannonball, ShotPoint.position, ShotPoint.rotation);
             CreatedCannonball.tag = "Ball";
             CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * BlastPower;
             Destroy(CreatedCannonball, 10);
+
         }
-
-    }
-
-    
+    } 
 }
