@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
+
 public class CannonController : MonoBehaviour
 {
     public float rotationSpeed = 1f;
@@ -13,6 +14,8 @@ public class CannonController : MonoBehaviour
     public float ShotCount = 10; // increase by 3 if hit green target
     public GameObject Cannonball;
     public Transform ShotPoint;
+
+    
 
     private void Update()
     {
@@ -42,6 +45,10 @@ public class CannonController : MonoBehaviour
                 BlastPower = 50;
             }
         }
+
+
+        
+
 
 
         transform.rotation = Quaternion.Euler(new Vector3(0, Xrotate+90, Yrotate));
