@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CannonController : MonoBehaviour
 {
-    public float rotationSpeed = 1f;
+    public float rotationSpeed = 50f;
     public float BlastPower = 25;
     public float Xrotate = 0;
     public float Yrotate = 0;
@@ -19,33 +19,34 @@ public class CannonController : MonoBehaviour
 
     private void Update()
     {
-        
+       
         float HorizontalRotation = Input.GetAxis("Horizontal"); // A or D / Left or Right
         float VerticalRotation = -Input.GetAxis("Vertical"); // W or S / Up or Down
 
-        Xrotate = Mathf.Clamp((Xrotate += (rotationSpeed*HorizontalRotation)), 0, 180);
-        Yrotate = Mathf.Clamp((Yrotate += (rotationSpeed*VerticalRotation)), -60, 40);
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            rotationSpeed += 10;
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            rotationSpeed -= 10;
+        }
+        rotationSpeed = Mathf.Clamp(rotationSpeed, 10, 100);
 
+        Xrotate = Mathf.Clamp((Xrotate += (rotationSpeed * Time.deltaTime * HorizontalRotation )), 0, 180);
+        Yrotate = Mathf.Clamp((Yrotate += (rotationSpeed * Time.deltaTime * VerticalRotation )), -60, 40);
 
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
             BlastPower -= 5;
-            if (BlastPower < 0)
-            {
-                BlastPower = 0;
-            }
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             BlastPower += 5;
-            if (BlastPower > 50)
-            {
-                BlastPower = 50;
-            }
         }
-
+        BlastPower = Mathf.Clamp(BlastPower, 0, 50);
 
         transform.rotation = Quaternion.Euler(new Vector3(0, Xrotate, Yrotate));
 
@@ -61,5 +62,7 @@ public class CannonController : MonoBehaviour
             Destroy(CreatedCannonball, 10);
 
         }
+        
+        
     } 
 }
