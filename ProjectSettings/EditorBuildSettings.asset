@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GDPL.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: b0a09f34f1f2de944914effb0b983498
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: 6c0672390b7dd614eb9642db74b944de
   m_configObjects: {}

@@ -2565,6 +2565,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1741206883711779383, guid: b6d5ff3e7e513254081d9e79ff8d4d69, type: 3}
+      propertyPath: numPoints
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5701741411592460499, guid: b6d5ff3e7e513254081d9e79ff8d4d69, type: 3}
       propertyPath: Xrotate
       value: 90

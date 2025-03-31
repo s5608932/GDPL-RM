@@ -10,13 +10,13 @@ public class HUDController : MonoBehaviour
 
     public CannonController cannonController;
 
-
     public TextMeshProUGUI rotationTXT;
     public TextMeshProUGUI elevationTXT;
     public TextMeshProUGUI powerTXT;
     public TextMeshProUGUI shotsTXT;
     public TextMeshProUGUI scoreTXT;
     public TextMeshProUGUI rotationSpeedTXT;
+    
 
     private void Update()
     {
@@ -30,25 +30,18 @@ public class HUDController : MonoBehaviour
         scoreTXT.text = "Score : " + cannonController.GameScore.ToString("F0");
         rotationSpeedTXT.text = "Rotation Speed : " + displayRotation.ToString("F0");
 
-        if (cannonController.GameScore >= 10)
+        if (cannonController.GameScore >= 5)
         {
-            //WIN SCREEN needs adding
-            if (Input.GetKeyDown(KeyCode.R))
+            Application.LoadLevel("Win");
+        }
+        if (cannonController.ShotCount == 0 && cannonController.shotActive == false)
+        {
+            if (cannonController.GameScore < 5)
             {
-                print("RESTART");
-                SceneManager.LoadScene("GDPL");
+                Application.LoadLevel("Lose");
             }
         }
-
-        if ((cannonController.GameScore < 10) && (cannonController.ShotCount == 0))
-        {
-            //LOSE SCREEN needs adding
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                print("RESTART");
-                SceneManager.LoadScene("GDPL");
-            }
-        }
+        
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
