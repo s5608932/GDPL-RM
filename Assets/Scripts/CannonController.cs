@@ -23,8 +23,9 @@ public class CannonController : MonoBehaviour
         float HorizontalRotation = Input.GetAxis("Horizontal"); // A or D / Left or Right
         float VerticalRotation = -Input.GetAxis("Vertical"); // W or S / Up or Down
 
-        Xrotate = Mathf.Clamp((Xrotate += (HorizontalRotation*rotationSpeed)), -90, 90);
-        Yrotate = Mathf.Clamp((Yrotate += (VerticalRotation*rotationSpeed)), -60, 40);
+        Xrotate = Mathf.Clamp((Xrotate += (rotationSpeed*HorizontalRotation)), 0, 180);
+        Yrotate = Mathf.Clamp((Yrotate += (rotationSpeed*VerticalRotation)), -60, 40);
+
 
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -36,7 +37,6 @@ public class CannonController : MonoBehaviour
             }
         }
 
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             BlastPower += 5;
@@ -47,11 +47,7 @@ public class CannonController : MonoBehaviour
         }
 
 
-        
-
-
-
-        transform.rotation = Quaternion.Euler(new Vector3(0, Xrotate+90, Yrotate));
+        transform.rotation = Quaternion.Euler(new Vector3(0, Xrotate, Yrotate));
 
 
         //Fire
