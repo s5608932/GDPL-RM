@@ -159,6 +159,7 @@ MonoBehaviour:
   ShotCount: 10
   Cannonball: {fileID: 1813860681808066275, guid: 56165213e79f4514abf9c9b07fa5e1a6, type: 3}
   ShotPoint: {fileID: 1531259283503762295}
+  shotActive: 0
 --- !u!114 &1741206883711779383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +260,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon-Model
       objectReference: {fileID: 0}
+    - target: {fileID: 3418614553023805092, guid: ea15ebbf367894f6895777bfe09b2903, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6aecd4349214d964a9ad84cce37a1e32, type: 2}
+    - target: {fileID: 3418614553023805094, guid: ea15ebbf367894f6895777bfe09b2903, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45b54cf1644b1174587fd71520784e6b, type: 2}
+    - target: {fileID: 3418614553023805096, guid: ea15ebbf367894f6895777bfe09b2903, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45b54cf1644b1174587fd71520784e6b, type: 2}
+    - target: {fileID: 3418614553023805098, guid: ea15ebbf367894f6895777bfe09b2903, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45b54cf1644b1174587fd71520784e6b, type: 2}
+    - target: {fileID: 3418614553023805114, guid: ea15ebbf367894f6895777bfe09b2903, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6aecd4349214d964a9ad84cce37a1e32, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3418614553021540448, guid: ea15ebbf367894f6895777bfe09b2903, type: 3}

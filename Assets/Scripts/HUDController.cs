@@ -32,13 +32,13 @@ public class HUDController : MonoBehaviour
 
         if (cannonController.GameScore >= 5)
         {
-            Application.LoadLevel("Win");
+            SceneManager.LoadScene("Win");
         }
         if (cannonController.ShotCount == 0 && cannonController.shotActive == false)
         {
             if (cannonController.GameScore < 5)
             {
-                Application.LoadLevel("Lose");
+                SceneManager.LoadScene("Lose");
             }
         }
         
