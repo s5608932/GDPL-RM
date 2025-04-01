@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class SpawnerLevel2 : MonoBehaviour
 {
-    public GameObject GreenCapsule;
+
+    /// WELCOME TO THE CAPSULESPAWNER SCRIPT FOR LEVEL 2
+    /// THIS IS WHERE CAPSULES, PLATFORMS, AND CUBES ARE SPAWNED IN AT THE START OF A LEVEL
+    /// THIS SCRIPT IS MODULAR AND CAN BE USED FOR MORE ADVANCED LEVELS, WITH THE ADDITION OF REPEATED CODE
+
+
+
+
+    //CAPSULES - ANY ADDITIONAL TYPE OF CAPSULE GAMEOBJECT SHOULD BE ADDED HERE
+    public GameObject GreenCapsule; 
     public GameObject BlueCapsule;
 
-    public GameObject PlatformRight;
-    public GameObject PlatformMR;
-    public GameObject PlatformMiddle;
-    public GameObject PlatformML;
-    public GameObject PlatformLeft;
-    
+    //PLATFORM - CREATE PLATFORMS HERE, ADDITIONAL PLATFORMS WILL REQUIRE THEIR OWN PREFAB - 5 PLATFORMS HAVE BEEN MADE SO FAR
+    public GameObject PlatformRight; // Far right platform
+    public GameObject PlatformMR; // Middle Right Platform
+    public GameObject PlatformMiddle; // Middle Platform
+    public GameObject PlatformML; // Middle Left Platform
+    public GameObject PlatformLeft; // Far Left Platform
 
+    //OBSTACLES - OBSTACLES CAN BE ADDED TO SPAWN AFTER THE PLATFORMS AND BEFORE THE CAPSULES - SO FAR ONLY THE CUBE EXISTS
     public GameObject Obstacle;
 
-    public Vector3[] PlatformNum = new Vector3[5];
+    //AN ARRAY OF PLATFORM NUMBERS FOR EASIER CUBE SPAWNING - CHANGE THE [5] TO CHANGE HOW MANY PLATFORMS
+    public Vector3[] PlatformNum = new Vector3[5]; 
 
     void Start()
     {
@@ -34,7 +45,7 @@ public class SpawnerLevel2 : MonoBehaviour
         Instantiate(PlatformML, randomSpawnML, Quaternion.identity);
         Instantiate(PlatformLeft, randomSpawnLeft, Quaternion.identity);
 
-        //Assign Array postition for cube spawning
+        //Assign Platform Array postition for cube spawning
         PlatformNum[0] = randomSpawnRight;
         PlatformNum[1] = randomSpawnMR;
         PlatformNum[2] = randomSpawnMiddle;
@@ -45,7 +56,7 @@ public class SpawnerLevel2 : MonoBehaviour
 
 
 
-        // CAPSULE SPAWNING
+        // CUBE SPAWNING
         // TO INCREASE THE AMOUNT OF CUBES PER PLATFORM, COPY AND PASTE BOTH THE [Vector3] AND [Instantiate] LINES, CHANGE SpawnCube[num] AS REQUIRED
         // CAPSULES ARE SPAWNED AT A RANDOM LOCATION FROM PLATFORM RADIUS
 
@@ -70,6 +81,7 @@ public class SpawnerLevel2 : MonoBehaviour
         // CAPSULE SPAWNING
         // CAPSULES ARE SPAWNED PER PLATFORM
         // [CHANGE i VALUE FOR MORE CAPSULES, WILL SPAWN ONE OF EACH COLOUR PER LOOP]
+        // SET THE PLATFORM USING THE PLATFORMS AND VECTORS CREATED ABOVE
 
 
         //Capsules - Left - 2 Green, 2 Blue 

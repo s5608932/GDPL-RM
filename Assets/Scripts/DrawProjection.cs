@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class DrawProjection : MonoBehaviour
 {
+
+    //THIS SCRIPT IS WHERE THE SHOT PROJECTION LINE IS CREATED
+
+
+
+    //--DO NOT TOUCH -- IT WORKS :)
+    
+    
+
+
     CannonController cannonController;
     LineRenderer lineRenderer;
     //Number of points on line
@@ -21,6 +31,7 @@ public class DrawProjection : MonoBehaviour
     
     void Update()
     {
+        //EVERY UPDATE, THE LINE WILL BE CREATED BASED OFF THE TRAJECTORY OF THE BALL
         lineRenderer.positionCount = numPoints;
         List<Vector3> points = new List<Vector3>();
         Vector3 startingPosition = cannonController.ShotPoint.position;

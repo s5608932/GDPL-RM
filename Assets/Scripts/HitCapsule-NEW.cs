@@ -4,24 +4,38 @@ using UnityEngine;
 
 public class HitCapsule : MonoBehaviour
 {
-    
-    public CannonController Shots;   
-    
+
+    //THIS SCRIPT IS USED WHEN THE BALL COLLIDES WITH ONE OF THE CAPSULES
+    //HITTING A GREEN CAPSULE INCREASES THE SHOTCOUNT BY 3
+    //HITTING A BLUE CAPSULE INCREASES THE SCORE BY 1
+
+
+    public CannonController cannonController; //USED FOR SCORE AND SHOTCOUNT VALUES
+
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == ("GreenCapsule"))
         {
+            print("Hit Green");
             Destroy(other.gameObject);
-            Shots.ShotCount += 3;
-            print($"Shots + 3 = {Shots.ShotCount}");
+            
+
+            //ERROR - GAME BREAKS WHEN TRYING TO UPDATE THE SHOTCOUNT
+            cannonController.ShotCount += 3;
+            print($"Shots + 3 = {cannonController.ShotCount}");
         }
 
 
         if (other.gameObject.tag == ("BlueCapsule"))
         {
             Destroy(other.gameObject);
-            Shots.GameScore += 1;
-            print($"Score = {Shots.GameScore}");
+
+
+
+            //ERROR - GAME BREAKS WHEN TRYING TO UPDATE THE SCORE
+            cannonController.GameScore += 1;
+            print($"Score = {cannonController.GameScore}");
         }
     }
 

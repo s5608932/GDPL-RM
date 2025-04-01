@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 20bc8489ec26c59489700dd869018488
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Visualcannonball: {fileID: 9163354138000078873, guid: 684902dcef6089247b25dc29639a2a90, type: 3}
+  - visStartSpawner: {instanceID: 0}
+  - cannonController: {instanceID: 0}
+  - visualSpawner: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -895,7 +895,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 0.25, z: 5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1956953821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &893761126
@@ -1137,7 +1138,7 @@ Transform:
   m_GameObject: {fileID: 981053015}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.381, y: 1.376, z: 5.831}
+  m_LocalPosition: {x: -6.381, y: 11.91, z: 2.5809999}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1556,13 +1557,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271526748}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9679112, y: -5.6496725, z: 4.7228436}
-  m_LocalScale: {x: 1.1237, y: 1.1237, z: 1.1237}
+  m_LocalRotation: {x: -0.030420447, y: -0, z: -0, w: 0.9995372}
+  m_LocalPosition: {x: -1.9679112, y: -5.6496725, z: 1.61}
+  m_LocalScale: {x: 1.1237, y: 1.1237, z: 1.7230817}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1772640232}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.486, y: 0, z: 0}
 --- !u!1 &1277865200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,7 +1664,7 @@ Transform:
   m_GameObject: {fileID: 1277865200}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.3340135, y: 2.2003279, z: 6.6908436}
+  m_LocalPosition: {x: -7.3340135, y: 12.734328, z: 3.4408436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1921,7 +1922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b81953d28e9f44298cedb67aba2f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shots: {fileID: 5701741411592460499, guid: b6d5ff3e7e513254081d9e79ff8d4d69, type: 3}
+  cannonController: {fileID: 0}
 --- !u!1 &1515436984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,43 +2261,12 @@ Transform:
   m_GameObject: {fileID: 1642600938}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.43, y: -4.38, z: 4.279844}
+  m_LocalPosition: {x: -0.43, y: -4.38, z: 0.86}
   m_LocalScale: {x: 5.707, y: 2.9805999, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1772640232}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1652754542
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1652754543}
-  m_Layer: 0
-  m_Name: Cannonball-Stack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1652754543
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652754542}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.21651499, z: -0, w: 0.97627926}
-  m_LocalPosition: {x: 4.16, y: 0, z: -0.046}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 25.009, z: 0}
 --- !u!1 &1661965608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,6 +2411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1662606027}
   - component: {fileID: 1662606026}
+  - component: {fileID: 1662606028}
   m_Layer: 0
   m_Name: RandomSpawner
   m_TagString: Untagged
@@ -2466,9 +2437,6 @@ MonoBehaviour:
   PlatformMiddle: {fileID: 9121114218732557408, guid: b8d243fd0d8fd92499bbf447d72c0101, type: 3}
   PlatformLeft: {fileID: 6156375441609723355, guid: 2f708398cf6e2344ea9ea319aa6d2583, type: 3}
   Obstacle: {fileID: 5254271530935260082, guid: 28c509db5339289439c63e1857a25af7, type: 3}
-  cannonController: {fileID: 359185414}
-  Visualcannonball: {fileID: 9163354138000078873, guid: 684902dcef6089247b25dc29639a2a90, type: 3}
-  visStartSpawner: {fileID: 1534975672}
   PlatformNum:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -2488,6 +2456,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662606028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662606025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bc8489ec26c59489700dd869018488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Visualcannonball: {fileID: 9163354138000078873, guid: 684902dcef6089247b25dc29639a2a90, type: 3}
+  visStartSpawner: {fileID: 1534975672}
+  cannonController: {fileID: 359185414}
+  visualSpawner: {fileID: 981053015}
+  visBallList: []
 --- !u!1 &1772640231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,7 +2538,7 @@ Transform:
   m_GameObject: {fileID: 1912266782}
   serializedVersion: 2
   m_LocalRotation: {x: -0.033390995, y: -0.70631796, z: -0.033390995, w: 0.70631796}
-  m_LocalPosition: {x: -4.4640136, y: -2.5096724, z: 5.502844}
+  m_LocalPosition: {x: -4.46, y: -2.468, z: 2.2528439}
   m_LocalScale: {x: 0.25550005, y: 0.3344, z: 1.2389002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2872,12 +2857,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956953817}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 20, y: 0.5, z: 15}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 4, y: 2, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 893761125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4835378026989925758
 PrefabInstance:
@@ -2911,6 +2896,10 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 5701741411592460499, guid: b6d5ff3e7e513254081d9e79ff8d4d69, type: 3}
+      propertyPath: Visualcannonball
+      value: 
+      objectReference: {fileID: 9163354138000078873, guid: 684902dcef6089247b25dc29639a2a90, type: 3}
     - target: {fileID: 6588683278492664516, guid: b6d5ff3e7e513254081d9e79ff8d4d69, type: 3}
       propertyPath: m_Parameters.colorGradient.ctime1
       value: 13493
@@ -3000,8 +2989,6 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 893761125}
   - {fileID: 4835378026989925758}
-  - {fileID: 1956953821}
-  - {fileID: 1652754543}
   - {fileID: 1474067300}
   - {fileID: 1662606027}
   - {fileID: 186319719}
