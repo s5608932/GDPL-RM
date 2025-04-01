@@ -1,5 +1,7 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CapsuleSpawner : MonoBehaviour
@@ -13,10 +15,40 @@ public class CapsuleSpawner : MonoBehaviour
 
     public GameObject Obstacle;
 
+    public CannonController cannonController;
+    public GameObject Visualcannonball;
+    public GameObject visStartSpawner;
+
     public Vector3[] PlatformNum = new Vector3[3];
 
     void Start()
     {
+
+
+
+        //VisualCannonballs
+        //Spawn cannonballs at start of level
+        float VisShotCount = cannonController.ShotCount;
+        
+
+        
+        for (int i = 0; i < VisShotCount; i++)
+        {
+            float randOffset = Random.Range(-2, 2);
+            Vector3 offSetSpawn = visStartSpawner.transform.position;
+            offSetSpawn.x += randOffset;
+            offSetSpawn.y += randOffset;
+            offSetSpawn.z += randOffset;
+            Instantiate(Visualcannonball, offSetSpawn, Quaternion.identity);
+        }
+
+
+
+
+
+
+
+
         //Platforms
         Vector3 randomSpawnRight = new Vector3(Random.Range(10, 50), Random.Range(-10, 11), Random.Range(30, 60));
         Vector3 randomSpawnMiddle = new Vector3(0, Random.Range(-5, 6), Random.Range(50, 80));
