@@ -32,8 +32,9 @@ public class HUDController : MonoBehaviour
 
         if (cannonController.GameScore >= 5)
         {
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("Level2");
         }
+
         if (cannonController.ShotCount == 0 && cannonController.shotActive == false)
         {
             if (cannonController.GameScore < 5)

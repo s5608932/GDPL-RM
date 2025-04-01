@@ -16,6 +16,7 @@ public class Restart : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            print("QUIT");
             Application.Quit();
         }
     }

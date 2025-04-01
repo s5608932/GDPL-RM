@@ -32,6 +32,7 @@ public class CannonController : MonoBehaviour
         {
             rotationSpeed -= 10;
         }
+
         rotationSpeed = Mathf.Clamp(rotationSpeed, 10, 100);
 
         Xrotate = Mathf.Clamp((Xrotate += (rotationSpeed * Time.deltaTime * HorizontalRotation )), 0, 180);
