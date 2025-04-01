@@ -1,1 +1,1 @@
-# GDPL-A1
+Bournemouth University - BSc Games Design - GDPL project
