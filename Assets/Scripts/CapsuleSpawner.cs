@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CapsuleSpawner : MonoBehaviour
 {
-    /// 
+    /// LEVEL 1
     /// 
     /// WELCOME TO THE CAPSULESPAWNER SCRIPT
     /// THIS IS WHERE CAPSULES, PLATFORMS, AND CUBES ARE SPAWNED IN AT THE START OF A LEVEL

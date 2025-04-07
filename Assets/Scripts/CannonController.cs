@@ -15,9 +15,9 @@ public class CannonController : MonoBehaviour
     public Transform ShotPoint;
     public bool shotActive = false;
 
+
     private void Update()
-    {
-       
+    {       
         //THIS SCRIPT IS WHERE THE CANNON IS CONTROLLED
         //ROTATIONS, POWER, AND FIRE BUTTON ARE ALL SET WITH CLAMPS
         //COROUTINE USED TO DESPAWN THE BALL AFTER 10 SECONDS - for lose screen to appear

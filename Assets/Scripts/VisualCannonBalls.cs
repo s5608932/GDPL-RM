@@ -18,6 +18,7 @@ public class VisualCannonBalls : MonoBehaviour
 
     void Start()
     {
+        
 
         //Spawn cannonballs at start of level
         float VisShotCount = cannonController.ShotCount;

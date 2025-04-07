@@ -13,6 +13,16 @@ public class HitCapsule : MonoBehaviour
     public CannonController cannonController; //USED FOR SCORE AND SHOTCOUNT VALUES
 
 
+
+    private void Start()
+    {
+        cannonController = FindObjectOfType<CannonController>();
+    }
+
+
+
+
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == ("GreenCapsule"))

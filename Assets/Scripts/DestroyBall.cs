@@ -9,8 +9,16 @@ public class DestroyBall : MonoBehaviour
 
 
 
-    public CannonController cannonController; 
-             
+    public CannonController cannonController;
+
+
+    private void Start()
+    {
+        cannonController = FindObjectOfType<CannonController>();
+    }
+
+
+
 
     private void OnCollisionEnter(Collision other)
     {
