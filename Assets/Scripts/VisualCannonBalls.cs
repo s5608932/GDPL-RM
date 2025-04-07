@@ -8,7 +8,7 @@ public class VisualCannonBalls : MonoBehaviour
     
     public GameObject Visualcannonball; //This prefab is the "Visual" Cannonballs, a seperate object to the main cannonballs, to prevent any interferance with shotcounts, scores, etc... These are purely a visual representation of the ShotCount
     public GameObject visStartSpawner; //The StartSpawner is only used when the level loads, it creates the same number of cannonballs as the shotcount, to go into the box
-    public CannonController cannonController; //The CannonController Script contains Cannon Controls, as well as ShotCounts, Score, and other variables
+    public CannonController cannonController; //The CannonController Script contains Cannon Controls, as well as ShotCounts,0 Score, and other variables
     public GameObject visualSpawner; //This is the spawn point for the "Visual" cannonballs to spawn at, when the shotCount increases, these will then roll down the small ramp, then into the box
     public List<GameObject> visBallList = new List<GameObject>(); //This is a list to store the "active" visualCannonballs
 
