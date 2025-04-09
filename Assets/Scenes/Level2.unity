@@ -911,6 +911,10 @@ PrefabInstance:
       propertyPath: rotationSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 5701741411592460499, guid: b6d5ff3e7e513254081d9e79ff8d4d69, type: 3}
+      propertyPath: visualCannonBall
+      value: 
+      objectReference: {fileID: 386906916}
     - target: {fileID: 6806979180498436213, guid: b6d5ff3e7e513254081d9e79ff8d4d69, type: 3}
       propertyPath: m_Name
       value: Cannon

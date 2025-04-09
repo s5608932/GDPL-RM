@@ -42,12 +42,12 @@ public class HUDController : MonoBehaviour
 
         if (drawProjection.renderOn == true)
         {
-            rendererOnTXT.text = ("Projection : ON");
+            rendererOnTXT.text = ("PROJECTION : ON");
         }
 
         if (drawProjection.renderOn == false)
         {
-            rendererOnTXT.text = ("Projection : OFF");
+            rendererOnTXT.text = ("PROJECTION : OFF");
         }
 
 

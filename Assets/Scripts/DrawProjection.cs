@@ -7,13 +7,6 @@ public class DrawProjection : MonoBehaviour
 
     //THIS SCRIPT IS WHERE THE SHOT PROJECTION LINE IS CREATED
 
-
-
-    //--DO NOT TOUCH -- IT WORKS :)
-    
-    
-
-
     CannonController cannonController;
     LineRenderer lineRenderer;
     //Number of points on line

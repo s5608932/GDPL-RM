@@ -14,8 +14,9 @@ public class CannonController : MonoBehaviour
     public GameObject Cannonball;
     public Transform ShotPoint;
     public bool shotActive = false;
-    public bool fired = false;
-    
+
+    public VisualCannonBalls visualCannonBall;
+        
 
     private void Update()
     {       
@@ -61,7 +62,7 @@ public class CannonController : MonoBehaviour
         //A COROUTINE IS SET UP TO ALLOW THE FINAL SHOT TO LAST A FULL 10 SECONDS BEFORE THE LOSE SCREEN APPEARS - THIS ALLOWS ANY LAST SECOND ROLLS INTO HITTING A TARGET TO INCREASE SHOT COUNT
         if (Input.GetKeyDown(KeyCode.Space) && ShotCount > 0)
         {
-            fired = true;
+            visualCannonBall.DestroyVisualBall();
             StopAllCoroutines();
             shotActive = true;
             ShotCount -= 1;
@@ -75,7 +76,6 @@ public class CannonController : MonoBehaviour
             CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * BlastPower;
             Destroy(CreatedCannonball, 10); //THIS WILL DESTROY THE CANNONBALL AFTER 10 SECONDS
             StartCoroutine(shotDeactivate()); //THIS WILL ACTIVATE A COROUTINE FOR ACTIVATING THE LOSE SCREEN
-            fired = false;
         }
         
         

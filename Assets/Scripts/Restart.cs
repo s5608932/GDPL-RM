@@ -14,7 +14,7 @@ public class Restart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             print("RESTART");
-            SceneManager.LoadScene("GDPL"); //GDPL IS LEVEL 1
+            SceneManager.LoadScene("Level1"); //GDPL IS LEVEL 1
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {

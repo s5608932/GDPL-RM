@@ -36,8 +36,8 @@ public class VisualCannonBalls : MonoBehaviour
             offSetSpawn.x += randOffset;
             offSetSpawn.y += randOffset;
             offSetSpawn.z += randOffset;
-            Instantiate(Visualcannonball, offSetSpawn, Quaternion.identity);
-            visBallList.Insert(i, Visualcannonball);
+            var testBall = Instantiate(Visualcannonball, offSetSpawn, Quaternion.identity);
+            visBallList.Insert(i, testBall);
             print($"Visual Ball {i+1}");
         }
 
@@ -51,35 +51,32 @@ public class VisualCannonBalls : MonoBehaviour
         //If Green Capsule is hit or falls off, the shot count increases by 3, so 3 new visualCannonballs need to be spawned / added to list
         float VisShotCount = cannonController.ShotCount;
 
-
-
-        //Destroy the first Visual Cannonball
-        GameObject ballToDestroy = visBallList[0];
-
-        if (cannonController.fired == true)
-        {
-            Destroy(ballToDestroy);
-            visBallList.RemoveAt(visBallList.Count - 1);
-        }
-
         
         if (visBallList.Count > VisShotCount)
         {    
-            visBallList.RemoveAt(visBallList.Count -1);
+            visBallList.RemoveAt(0);
             print($"Visual Cannon Balls : {visBallList.Count}");
             
         }
         
-
-
         if (visBallList.Count < VisShotCount)
         {
-            visBallList.Add(Visualcannonball);
             Vector3 spawnLoc = visualSpawner.transform.position;
-            Instantiate(Visualcannonball, spawnLoc, Quaternion.identity);
-            visBallList.Add(Visualcannonball);
+            var newBall = Instantiate(Visualcannonball, spawnLoc, Quaternion.identity);
+            visBallList.Add(newBall);
             print($"Visual Cannon Balls : {visBallList.Count}");
         }
+    }
 
+
+
+    public void DestroyVisualBall()
+    {
+        //Destroy the first Visual Cannonball
+        GameObject ballToDestroy = visBallList[0];
+        print("Destroy ball");
+        Destroy(ballToDestroy);
+        visBallList.RemoveAt(0);
+        
     }
 }
