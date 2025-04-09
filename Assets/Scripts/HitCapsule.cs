@@ -11,7 +11,8 @@ public class HitCapsule : MonoBehaviour
 
 
     public CannonController cannonController; //USED FOR SCORE AND SHOTCOUNT VALUES
-
+    public bool greenHit = false;
+    public bool blueHit = false;
 
 
     private void Start()
@@ -27,25 +28,21 @@ public class HitCapsule : MonoBehaviour
     {
         if (other.gameObject.tag == ("GreenCapsule"))
         {
-            print("Hit Green");
+            greenHit = true;
             Destroy(other.gameObject);
-            
-
-            //ERROR - GAME BREAKS WHEN TRYING TO UPDATE THE SHOTCOUNT
             cannonController.ShotCount += 3;
-            print($"Shots + 3 = {cannonController.ShotCount}");
+            //print($"Shots + 3 = {cannonController.ShotCount}");
+            greenHit = false;
         }
 
 
         if (other.gameObject.tag == ("BlueCapsule"))
         {
+            blueHit = true;
             Destroy(other.gameObject);
-
-
-
-            //ERROR - GAME BREAKS WHEN TRYING TO UPDATE THE SCORE
             cannonController.GameScore += 1;
-            print($"Score = {cannonController.GameScore}");
+            //print($"Score = {cannonController.GameScore}");
+            blueHit = false;
         }
     }
 

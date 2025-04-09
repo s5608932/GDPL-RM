@@ -23,32 +23,51 @@ public class DrawProjection : MonoBehaviour
 
     public LayerMask CollidableLayers;
 
+    public bool renderOn = true;
+
     void Start()
     {
         cannonController = GetComponent<CannonController>();
         lineRenderer = GetComponent<LineRenderer>();
+
     }
     
     void Update()
     {
-        //EVERY UPDATE, THE LINE WILL BE CREATED BASED OFF THE TRAJECTORY OF THE BALL
-        lineRenderer.positionCount = numPoints;
-        List<Vector3> points = new List<Vector3>();
-        Vector3 startingPosition = cannonController.ShotPoint.position;
-        Vector3 startingVelocity = cannonController.ShotPoint.up * cannonController.BlastPower;
 
-        for (float t = 0; t < numPoints; t += distPoints)
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Vector3 newPoint = startingPosition + t * startingVelocity;
-            newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y / 2f * t * t;
-            points.Add(newPoint);
-
-            if (Physics.OverlapSphere(newPoint, 2, CollidableLayers).Length > 0)
-            {
-                lineRenderer.positionCount = points.Count;
-                break;
-            }
+            renderOn ^= true;
         }
-        lineRenderer.SetPositions(points.ToArray());
+
+
+        if (renderOn == true)
+        {
+
+            lineRenderer.enabled = true;
+            //EVERY UPDATE, THE LINE WILL BE CREATED BASED OFF THE TRAJECTORY OF THE BALL
+            lineRenderer.positionCount = numPoints;
+            List<Vector3> points = new List<Vector3>();
+            Vector3 startingPosition = cannonController.ShotPoint.position;
+            Vector3 startingVelocity = cannonController.ShotPoint.up * cannonController.BlastPower;
+
+            for (float t = 0; t < numPoints; t += distPoints)
+            {
+                Vector3 newPoint = startingPosition + t * startingVelocity;
+                newPoint.y = startingPosition.y + startingVelocity.y * t + Physics.gravity.y / 2f * t * t;
+                points.Add(newPoint);
+
+                if (Physics.OverlapSphere(newPoint, 2, CollidableLayers).Length > 0)
+                {
+                    lineRenderer.positionCount = points.Count;
+                    break;
+                }
+            }
+            lineRenderer.SetPositions(points.ToArray());
+        }
+        if (renderOn == false) 
+        {
+            lineRenderer.enabled = false;
+        }
     }
 }

@@ -14,6 +14,7 @@ public class HUDController : MonoBehaviour
 
 
     public CannonController cannonController; //This Script is needed for the different variables to be read 
+    public DrawProjection drawProjection;
 
     //The following will allow text to be entered onto the UI
     public TextMeshProUGUI rotationTXT;
@@ -22,6 +23,7 @@ public class HUDController : MonoBehaviour
     public TextMeshProUGUI shotsTXT;
     public TextMeshProUGUI scoreTXT;
     public TextMeshProUGUI rotationSpeedTXT;
+    public TextMeshProUGUI rendererOnTXT;
     
 
     private void Update()
@@ -31,12 +33,25 @@ public class HUDController : MonoBehaviour
         var displayRotation = cannonController.rotationSpeed / 10; // Turns the RotationSpeed value into a 1-10 scale
 
         //The following seciton will enter the text to be displayed on the UI
-        rotationTXT.text = "Rotation : " + cannonController.Xrotate.ToString("F0");
-        elevationTXT.text = "Elevation : " + minusElevation.ToString("F0");
-        powerTXT.text = "Power : " + displayPower.ToString("F0");
-        shotsTXT.text = "Shots : " + cannonController.ShotCount.ToString("F0");
-        scoreTXT.text = "Score : " + cannonController.GameScore.ToString("F0");
-        rotationSpeedTXT.text = "Rotation Speed : " + displayRotation.ToString("F0");
+        rotationTXT.text = "ROTATION : " + cannonController.Xrotate.ToString("F0");
+        elevationTXT.text = "ELEVATION : " + minusElevation.ToString("F0");
+        powerTXT.text = "POWER : " + displayPower.ToString("F0");
+        shotsTXT.text = "SHOTS : " + cannonController.ShotCount.ToString("F0");
+        scoreTXT.text = "SCORE : " + cannonController.GameScore.ToString("F0");
+        rotationSpeedTXT.text = "SPEED : " + displayRotation.ToString("F0");
+
+        if (drawProjection.renderOn == true)
+        {
+            rendererOnTXT.text = ("Projection : ON");
+        }
+
+        if (drawProjection.renderOn == false)
+        {
+            rendererOnTXT.text = ("Projection : OFF");
+        }
+
+
+
 
         if (cannonController.GameScore >= 5) //If the score is 5 or greater, then Level 2 will load
         {

@@ -9,8 +9,12 @@ public class VisualCannonBalls : MonoBehaviour
     public GameObject Visualcannonball; //This prefab is the "Visual" Cannonballs, a seperate object to the main cannonballs, to prevent any interferance with shotcounts, scores, etc... These are purely a visual representation of the ShotCount
     public GameObject visStartSpawner; //The StartSpawner is only used when the level loads, it creates the same number of cannonballs as the shotcount, to go into the box
     public CannonController cannonController; //The CannonController Script contains Cannon Controls, as well as ShotCounts,0 Score, and other variables
+    public HitCapsule hitCapsule;
     public GameObject visualSpawner; //This is the spawn point for the "Visual" cannonballs to spawn at, when the shotCount increases, these will then roll down the small ramp, then into the box
     public List<GameObject> visBallList = new List<GameObject>(); //This is a list to store the "active" visualCannonballs
+
+    
+
 
     //THIS SCRIPT CONTAINS THE CODE TO SPAWN AND DELETE THE VISUALCANNONBALLS,
     //THESE ARE SEEN IN THE CRATE NEXT TO THE CANNON,
@@ -18,10 +22,12 @@ public class VisualCannonBalls : MonoBehaviour
 
     void Start()
     {
-        
+        cannonController = FindObjectOfType<CannonController>();
+        hitCapsule = FindObjectOfType<HitCapsule>();
 
         //Spawn cannonballs at start of level
         float VisShotCount = cannonController.ShotCount;
+
         //creates 10 balls at start - add to list
         for (int i = 0; i < VisShotCount; i++)
         {
@@ -31,8 +37,10 @@ public class VisualCannonBalls : MonoBehaviour
             offSetSpawn.y += randOffset;
             offSetSpawn.z += randOffset;
             Instantiate(Visualcannonball, offSetSpawn, Quaternion.identity);
-            visBallList.Add(Visualcannonball);
+            visBallList.Insert(i, Visualcannonball);
+            print($"Visual Ball {i+1}");
         }
+
     }
 
 
@@ -44,19 +52,34 @@ public class VisualCannonBalls : MonoBehaviour
         float VisShotCount = cannonController.ShotCount;
 
 
-        if (visBallList.Count > cannonController.ShotCount)
+
+        //Destroy the first Visual Cannonball
+        GameObject ballToDestroy = visBallList[0];
+
+        if (cannonController.fired == true)
         {
-            visBallList.Remove(Visualcannonball);
-            
+            Destroy(ballToDestroy);
+            visBallList.RemoveAt(visBallList.Count - 1);
         }
 
-        if (visBallList.Count < cannonController.ShotCount)
+        
+        if (visBallList.Count > VisShotCount)
+        {    
+            visBallList.RemoveAt(visBallList.Count -1);
+            print($"Visual Cannon Balls : {visBallList.Count}");
+            
+        }
+        
+
+
+        if (visBallList.Count < VisShotCount)
         {
             visBallList.Add(Visualcannonball);
             Vector3 spawnLoc = visualSpawner.transform.position;
             Instantiate(Visualcannonball, spawnLoc, Quaternion.identity);
             visBallList.Add(Visualcannonball);
-
+            print($"Visual Cannon Balls : {visBallList.Count}");
         }
+
     }
 }
