@@ -6,8 +6,10 @@ public class SpawnerLevel3 : MonoBehaviour
 {
 
     /// WELCOME TO THE SPAWNER SCRIPT FOR LEVEL 3
-    /// THIS IS WHERE CAPSULES, PLATFORMS, AND CUBES ARE SPAWNED IN AT THE START OF LEVEL 3
-    /// THIS SCRIPT IS MODULAR AND CAN BE USED FOR MORE ADVANCED LEVELS, WITH THE ADDITION OF REPEATED CODE
+    /// LEVEL 3 ONLY HAS ONE PLATFORM AND ONE CAPSULE (RED)
+    /// HIT THE RED CAPSULE TO WIN THE GAME
+    /// PLAYER ONLY HAS 1 SHOT AND NO PROJECTION LINE
+    /// PLATFORM AND CAPSULE HAVE A SET SPAWN POSITION
 
 
     //CAPSULES - ANY ADDITIONAL TYPE OF CAPSULE GAMEOBJECT SHOULD BE ADDED HERE
@@ -50,15 +52,12 @@ public class SpawnerLevel3 : MonoBehaviour
             Instantiate(Obstacle, SpawnCube1, Quaternion.identity);
             Vector3 SpawnCube2 = new Vector3(Random.Range(PlatformNum[i].x - 8, PlatformNum[i].x + 8), PlatformNum[i].y + 1, Random.Range(PlatformNum[i].z - 8, PlatformNum[i].z + 8));
             Instantiate(Obstacle, SpawnCube2, Quaternion.identity);
-            
         }
 
         // CAPSULE SPAWNING
-        // CAPSULES ARE SPAWNED PER PLATFORM
-        // [CHANGE i VALUE FOR MORE CAPSULES, WILL SPAWN ONE OF EACH COLOUR PER LOOP]
-        // SET THE PLATFORM USING THE PLATFORMS AND VECTORS CREATED ABOVE
+        // 1 RED CAPSULE IS SPAWNED, HIT THIS TO WIN
 
-        //Capsules - Mid - 1 Blue
+        //Capsules - Mid - 1 Red
         for (int i = 0; i < 1; i++)
         {
             Vector3 randomSpawnRed = new Vector3(Random.Range(randomSpawnMiddle.x - 8, randomSpawnMiddle.x + 8), randomSpawnMiddle.y + 5, Random.Range(randomSpawnMiddle.z - 8, randomSpawnMiddle.z + 8));

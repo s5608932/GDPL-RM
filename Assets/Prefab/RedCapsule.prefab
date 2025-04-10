@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8719053377938372706}
   m_Layer: 0
   m_Name: RedCapsule
-  m_TagString: BlueCapsule
+  m_TagString: RedCapsule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

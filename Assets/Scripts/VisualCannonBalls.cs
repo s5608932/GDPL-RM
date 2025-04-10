@@ -38,7 +38,7 @@ public class VisualCannonBalls : MonoBehaviour
             offSetSpawn.z += randOffset;
             var testBall = Instantiate(Visualcannonball, offSetSpawn, Quaternion.identity);
             visBallList.Insert(i, testBall);
-            print($"Visual Ball {i+1}");
+            //print($"Visual Ball {i+1}");
         }
 
     }
@@ -55,7 +55,7 @@ public class VisualCannonBalls : MonoBehaviour
         if (visBallList.Count > VisShotCount)
         {    
             visBallList.RemoveAt(0);
-            print($"Visual Cannon Balls : {visBallList.Count}");
+            //print($"Visual Cannon Balls : {visBallList.Count}");
             
         }
         
@@ -64,7 +64,7 @@ public class VisualCannonBalls : MonoBehaviour
             Vector3 spawnLoc = visualSpawner.transform.position;
             var newBall = Instantiate(Visualcannonball, spawnLoc, Quaternion.identity);
             visBallList.Add(newBall);
-            print($"Visual Cannon Balls : {visBallList.Count}");
+            //print($"Visual Cannon Balls : {visBallList.Count}");
         }
     }
 
@@ -74,7 +74,7 @@ public class VisualCannonBalls : MonoBehaviour
     {
         //Destroy the first Visual Cannonball
         GameObject ballToDestroy = visBallList[0];
-        print("Destroy ball");
+        //print("Destroy ball");
         Destroy(ballToDestroy);
         visBallList.RemoveAt(0);
         

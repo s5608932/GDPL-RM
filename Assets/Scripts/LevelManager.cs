@@ -10,6 +10,13 @@ public class LevelManager : MonoBehaviour
     string sceneName;
     public DrawProjection drawProjection;
 
+
+    /*
+        LEVEL MANAGER SCRIPT 
+        THIS SCRIPT IS WHERE WIN CONDITIONS CAN BE DEFINED (CHANGING GAMESCORE IN IF STATEMENTS)
+        THIS IS WHERE THE NEXT LEVEL IS LOADED
+      
+    */
     void Start()
     {
         // Create a temporary reference to the current scene.
@@ -19,7 +26,6 @@ public class LevelManager : MonoBehaviour
         sceneName = currentScene.name;
     }
 
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) //If the player presses "Esc" then the application will close
@@ -28,10 +34,9 @@ public class LevelManager : MonoBehaviour
             Application.Quit();
         }
 
-
-
         if (sceneName == "Level1") // Level 1 Win Conditions
         {
+           
             if (cannonController.GameScore >= 5) //If the score is 5 or greater, then Level 2 will load
             {
                 SceneManager.LoadScene("Level2");
@@ -43,8 +48,10 @@ public class LevelManager : MonoBehaviour
                 
             }
         }
+
         else if (sceneName == "Level2")
         {
+            
             if (cannonController.GameScore >= 5) //If the score is 5 or greater, then Level 3 will load
             {
                 SceneManager.LoadScene("Level3");
@@ -56,9 +63,13 @@ public class LevelManager : MonoBehaviour
 
             }
         }
+
+
+        //ERROR IN HERE MAYBE?
         else if (sceneName == "Level3")
         {
-            drawProjection.renderOn = false;
+            drawProjection.renderOn = false; // DISABLES PROJECTION LINE
+            
             if (hitCapsule.win == true && cannonController.shotActive == false) //If the score is 1 or greater, then the Win screen will load
             {
                 SceneManager.LoadScene("Win");
@@ -70,8 +81,6 @@ public class LevelManager : MonoBehaviour
 
             }
         }
-
-
 
     }
 }

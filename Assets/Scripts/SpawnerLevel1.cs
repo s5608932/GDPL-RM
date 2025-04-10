@@ -6,16 +6,12 @@ using UnityEngine;
 
 public class SpawnerLevel1 : MonoBehaviour
 {
-    /// LEVEL 1
-    /// 
     /// WELCOME TO THE SPAWNER SCRIPT
     /// THIS IS WHERE CAPSULES, PLATFORMS, AND CUBES ARE SPAWNED IN AT THE START OF LEVEL 1
     /// THIS SCRIPT IS MODULAR AND CAN BE USED FOR MORE ADVANCED LEVELS, WITH THE ADDITION OF REPEATED CODE
     ///     -FOR EXAMPLE: LEVEL 2
     ///         -LEVEL 2 USES THIS SAME CODE, WITH THE ADDITION OF EXTRA GAMEOBJECTS TO CREATE MORE PLATFORMS
-    /// 
-    /// 
-
+    
 
 
 
@@ -53,14 +49,9 @@ public class SpawnerLevel1 : MonoBehaviour
         PlatformNum[2] = randomSpawnLeft;
 
 
-
-
-
         // CUBE SPAWNING
         // TO INCREASE THE AMOUNT OF CUBES PER PLATFORM, COPY AND PASTE BOTH THE [Vector3] AND [Instantiate] LINES, CHANGE SpawnCube[num] AS REQUIRED
         // CAPSULES ARE SPAWNED AT A RANDOM LOCATION FROM PLATFORM RADIUS
-
-
 
 
         //Spawn 3 Cubes per platform
