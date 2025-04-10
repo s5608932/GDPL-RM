@@ -13,7 +13,8 @@ public class HitCapsule : MonoBehaviour
     public CannonController cannonController; //USED FOR SCORE AND SHOTCOUNT VALUES
     public bool greenHit = false;
     public bool blueHit = false;
-
+    public bool redHit = false;
+    public bool win = false;
 
     private void Start()
     {
@@ -44,6 +45,16 @@ public class HitCapsule : MonoBehaviour
             //print($"Score = {cannonController.GameScore}");
             blueHit = false;
         }
+
+        if (other.gameObject.tag == ("RedCapsule"))
+        {
+            redHit = true;
+            Destroy(other.gameObject);
+            win = true;
+            //print($"Score = {cannonController.GameScore}");
+            redHit = false;
+        }
+
     }
 
 }

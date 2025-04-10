@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CapsuleSpawner : MonoBehaviour
+public class SpawnerLevel1 : MonoBehaviour
 {
     /// LEVEL 1
     /// 
-    /// WELCOME TO THE CAPSULESPAWNER SCRIPT
-    /// THIS IS WHERE CAPSULES, PLATFORMS, AND CUBES ARE SPAWNED IN AT THE START OF A LEVEL
+    /// WELCOME TO THE SPAWNER SCRIPT
+    /// THIS IS WHERE CAPSULES, PLATFORMS, AND CUBES ARE SPAWNED IN AT THE START OF LEVEL 1
     /// THIS SCRIPT IS MODULAR AND CAN BE USED FOR MORE ADVANCED LEVELS, WITH THE ADDITION OF REPEATED CODE
     ///     -FOR EXAMPLE: LEVEL 2
     ///         -LEVEL 2 USES THIS SAME CODE, WITH THE ADDITION OF EXTRA GAMEOBJECTS TO CREATE MORE PLATFORMS
@@ -38,9 +38,9 @@ public class CapsuleSpawner : MonoBehaviour
     {
 
         //Platform Spawn Positions ( x , y , z )
-        Vector3 randomSpawnRight = new Vector3(Random.Range(10, 50), Random.Range(-10, 11), Random.Range(30, 60));
+        Vector3 randomSpawnRight = new Vector3(Random.Range(10, 35), Random.Range(-10, 11), Random.Range(30, 60));
         Vector3 randomSpawnMiddle = new Vector3(0, Random.Range(-5, 6), Random.Range(50, 80));
-        Vector3 randomSpawnLeft = new Vector3(Random.Range(-50, -10), Random.Range(-10, 11), Random.Range(30, 60));
+        Vector3 randomSpawnLeft = new Vector3(Random.Range(-10, -35), Random.Range(-10, 11), Random.Range(30, 60));
 
         //Spawn Platforms
         Instantiate(PlatformRight, randomSpawnRight, Quaternion.identity);

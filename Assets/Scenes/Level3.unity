@@ -122,80 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &14097538
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 14097540}
-  - component: {fileID: 14097539}
-  - component: {fileID: 14097541}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &14097539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14097538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f05d3f11d66a724cb59efb6e743d127, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cannonController: {fileID: 1775721250}
-  hitCapsule: {fileID: 0}
-  drawProjection: {fileID: 1844676592}
---- !u!4 &14097540
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14097538}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &14097541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14097538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f776d57195399549852e27580156ad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GreenCapsule: {fileID: 4215285469215098443, guid: 341cf73f84fef87459438ffa43325c28, type: 3}
-  BlueCapsule: {fileID: 5019481789022848261, guid: 720ffe4ea05d9794a98e33bf71fc7b60, type: 3}
-  PlatformRight: {fileID: 8243801304890543379, guid: d90e386560c4e244eb980a6c0800b24b, type: 3}
-  PlatformMR: {fileID: 9121114218732557408, guid: aa166523ec7926d40b0be8cdfe8b7570, type: 3}
-  PlatformMiddle: {fileID: 9121114218732557408, guid: b8d243fd0d8fd92499bbf447d72c0101, type: 3}
-  PlatformML: {fileID: 9121114218732557408, guid: 7f752ffffdacc7e4fbbbd93096965294, type: 3}
-  PlatformLeft: {fileID: 6156375441609723355, guid: 2f708398cf6e2344ea9ea319aa6d2583, type: 3}
-  Obstacle: {fileID: 5254271530935260082, guid: 28c509db5339289439c63e1857a25af7, type: 3}
-  PlatformNum:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
 --- !u!1 &39564952
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +227,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39564952}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &60807603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60807605}
+  - component: {fileID: 60807604}
+  - component: {fileID: 60807606}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &60807604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60807603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f05d3f11d66a724cb59efb6e743d127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cannonController: {fileID: 1775721250}
+  hitCapsule: {fileID: 0}
+  drawProjection: {fileID: 1844676592}
+--- !u!4 &60807605
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60807603}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &60807606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60807603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eedf671e7b1dec4e8f3a51f818a07b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RedCapsule: {fileID: 5019481789022848261, guid: bdd4b34cef136df44b59bb49b1c5a80e, type: 3}
+  Obstacle: {fileID: 5254271530935260082, guid: 28c509db5339289439c63e1857a25af7, type: 3}
+  PlatformMiddle: {fileID: 9121114218732557408, guid: b8d243fd0d8fd92499bbf447d72c0101, type: 3}
+  PlatformNum:
+  - {x: 0, y: 0, z: 0}
 --- !u!1 &234295447
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5701741411592460499, guid: b6d5ff3e7e513254081d9e79ff8d4d69, type: 3}
       propertyPath: ShotCount
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5701741411592460499, guid: b6d5ff3e7e513254081d9e79ff8d4d69, type: 3}
       propertyPath: cannonVFX
@@ -1582,7 +1573,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -126.060486, w: 0}
+  m_margin: {x: 0, y: 0, z: -119.15991, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2550,7 +2541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b81953d28e9f44298cedb67aba2f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannonController: {fileID: 0}
+  cannonController: {fileID: 1775721250}
 --- !u!65 &1693421369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2810,7 +2801,7 @@ MonoBehaviour:
 
     FIRE : SPACE
 
-    Shot Projection : P'
+    NO PROJECTION'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3469,4 +3460,4 @@ SceneRoots:
   - {fileID: 577632948}
   - {fileID: 1693421372}
   - {fileID: 511968605}
-  - {fileID: 14097540}
+  - {fileID: 60807605}

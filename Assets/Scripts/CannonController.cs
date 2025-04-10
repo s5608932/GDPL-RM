@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CannonController : MonoBehaviour
 {
@@ -10,13 +11,40 @@ public class CannonController : MonoBehaviour
     public float Xrotate = 0;
     public float Yrotate = 0;
     public float GameScore = 0; // increase by 1 if hit blue target
-    public float ShotCount = 10; // increase by 3 if hit green target
+    public float ShotCount;
     public GameObject Cannonball;
+    public GameObject cannonVFX;
     public Transform ShotPoint;
     public bool shotActive = false;
-
     public VisualCannonBalls visualCannonBall;
-        
+    string sceneName;
+
+    public void Start()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        sceneName = currentScene.name;
+
+
+
+        if (sceneName == "Level1")
+        {
+            ShotCount = 10;
+
+}
+        if (sceneName == "Level2")
+        {
+            ShotCount = 5;
+
+        }
+        if (sceneName == "Level3")
+        {
+
+            ShotCount = 1;
+        }
+    }
+    
 
     private void Update()
     {       
@@ -57,7 +85,6 @@ public class CannonController : MonoBehaviour
         // THIS SETS THE ROTATION OF THE CANNON OBJECT BASED ON THE ROTATIONS SET
         transform.rotation = Quaternion.Euler(new Vector3(0, Xrotate, Yrotate));
 
-
         //FIRE - PRESS THE "SPACE" KEY TO FIRE THE CANNON
         //A COROUTINE IS SET UP TO ALLOW THE FINAL SHOT TO LAST A FULL 10 SECONDS BEFORE THE LOSE SCREEN APPEARS - THIS ALLOWS ANY LAST SECOND ROLLS INTO HITTING A TARGET TO INCREASE SHOT COUNT
         if (Input.GetKeyDown(KeyCode.Space) && ShotCount > 0)
@@ -71,7 +98,12 @@ public class CannonController : MonoBehaviour
             //THIS CREATES A CANNONBALL - LOCATED AT THE SHOT POINT - AND TAGS IT
             GameObject CreatedCannonball = Instantiate(Cannonball, ShotPoint.position, ShotPoint.rotation);
             CreatedCannonball.tag = "Ball";
-            
+
+
+            //THIS CREATES THE BLAST VFX WHEN FIRED
+            GameObject BlastVFX = Instantiate(cannonVFX, ShotPoint.position, ShotPoint.rotation);
+
+
             //THIS FIRES THE BALL BASED ON THE CANNON ROTATION AND THE BLAST POWER SET
             CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * BlastPower;
             Destroy(CreatedCannonball, 10); //THIS WILL DESTROY THE CANNONBALL AFTER 10 SECONDS

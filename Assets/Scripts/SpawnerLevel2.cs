@@ -5,8 +5,8 @@ using UnityEngine;
 public class SpawnerLevel2 : MonoBehaviour
 {
 
-    /// WELCOME TO THE CAPSULESPAWNER SCRIPT FOR LEVEL 2
-    /// THIS IS WHERE CAPSULES, PLATFORMS, AND CUBES ARE SPAWNED IN AT THE START OF A LEVEL
+    /// WELCOME TO THE SPAWNER SCRIPT FOR LEVEL 2
+    /// THIS IS WHERE CAPSULES, PLATFORMS, AND CUBES ARE SPAWNED IN AT THE START OF LEVEL 2
     /// THIS SCRIPT IS MODULAR AND CAN BE USED FOR MORE ADVANCED LEVELS, WITH THE ADDITION OF REPEATED CODE
 
 
@@ -84,8 +84,8 @@ public class SpawnerLevel2 : MonoBehaviour
         // SET THE PLATFORM USING THE PLATFORMS AND VECTORS CREATED ABOVE
 
 
-        //Capsules - Left - 2 Green, 2 Blue 
-        for (int i = 0; i < 2; i++)
+        //Capsules - Left - 1 Green, 1 Blue 
+        for (int i = 0; i < 1; i++)
         {
             Vector3 randomSpawnGreenL = new Vector3(Random.Range(randomSpawnLeft.x - 8, randomSpawnLeft.x + 8), randomSpawnLeft.y + 5, Random.Range(randomSpawnLeft.z - 8, randomSpawnLeft.z + 8));
             Vector3 randomSpawnBlueL = new Vector3(Random.Range(randomSpawnLeft.x - 8, randomSpawnLeft.x + 8), randomSpawnLeft.y + 5, Random.Range(randomSpawnLeft.z - 8, randomSpawnLeft.z + 8));
@@ -122,8 +122,8 @@ public class SpawnerLevel2 : MonoBehaviour
             Instantiate(BlueCapsule, randomSpawnBlueMR, Quaternion.identity);
         }
 
-        //Capsules - Right - 2 Green, 2 Blue
-        for (int i = 0; i < 2; i++)
+        //Capsules - Right - 1 Green, 1 Blue
+        for (int i = 0; i < 1; i++)
         {
             Vector3 randomSpawnGreenR = new Vector3(Random.Range(randomSpawnRight.x - 8, randomSpawnRight.x + 8), randomSpawnRight.y + 5, Random.Range(randomSpawnRight.z - 8, randomSpawnRight.z + 8));
             Vector3 randomSpawnBlueR = new Vector3(Random.Range(randomSpawnRight.x - 8, randomSpawnRight.x + 8), randomSpawnRight.y + 5, Random.Range(randomSpawnRight.z - 8, randomSpawnRight.z + 8));

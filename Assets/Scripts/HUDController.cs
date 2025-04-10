@@ -33,8 +33,8 @@ public class HUDController : MonoBehaviour
         var displayRotation = cannonController.rotationSpeed / 10; // Turns the RotationSpeed value into a 1-10 scale
 
         //The following seciton will enter the text to be displayed on the UI
-        rotationTXT.text = "ROTATION : " + cannonController.Xrotate.ToString("F0");
-        elevationTXT.text = "ELEVATION : " + minusElevation.ToString("F0");
+        rotationTXT.text = "ROTATION : " + cannonController.Xrotate.ToString("F0") + "°";
+        elevationTXT.text = "ELEVATION : " + minusElevation.ToString("F0") + "°";
         powerTXT.text = "POWER : " + displayPower.ToString("F0");
         shotsTXT.text = "SHOTS : " + cannonController.ShotCount.ToString("F0");
         scoreTXT.text = "SCORE : " + cannonController.GameScore.ToString("F0");
@@ -48,30 +48,9 @@ public class HUDController : MonoBehaviour
         if (drawProjection.renderOn == false)
         {
             rendererOnTXT.text = ("PROJECTION : OFF");
-        }
+        }      
 
-
-
-
-        if (cannonController.GameScore >= 5) //If the score is 5 or greater, then Level 2 will load
-        {
-            SceneManager.LoadScene("Level2");
-        }
-
-        if (cannonController.ShotCount == 0 && cannonController.shotActive == false) //If the player runs out of shots, and the last ball fired has despawned - the Lose screen will appear
-        {
-            if (cannonController.GameScore < 5)
-            {
-                SceneManager.LoadScene("Lose");
-            }
-        }
         
-
-        if (Input.GetKeyDown(KeyCode.Escape)) //If the player presses "Esc" then the application will close
-        {
-            print("Quit"); //Print for Debug testing
-            Application.Quit();
-        }
         
     }
 

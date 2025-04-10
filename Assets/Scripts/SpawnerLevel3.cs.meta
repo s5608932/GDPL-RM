@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6eedf671e7b1dec4e8f3a51f818a07b7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - BlueCapsule: {fileID: 5019481789022848261, guid: 720ffe4ea05d9794a98e33bf71fc7b60, type: 3}
+  - PlatformMiddle: {fileID: 9121114218732557408, guid: b8d243fd0d8fd92499bbf447d72c0101, type: 3}
+  - Obstacle: {fileID: 5254271530935260082, guid: 28c509db5339289439c63e1857a25af7, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
