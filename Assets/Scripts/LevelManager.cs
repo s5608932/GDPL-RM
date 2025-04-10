@@ -19,6 +19,11 @@ public class LevelManager : MonoBehaviour
     */
     void Start()
     {
+
+        cannonController = FindObjectOfType<CannonController>();
+
+
+
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
 
