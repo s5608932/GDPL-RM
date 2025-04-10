@@ -75,7 +75,7 @@ public class LevelManager : MonoBehaviour
                 SceneManager.LoadScene("Win");
             }
 
-            if (cannonController.ShotCount == 0 && cannonController.shotActive == false && cannonController.GameScore < 1) //If the player runs out of shots, and the last ball fired has despawned - the Lose screen will appear
+            if (cannonController.ShotCount == 0 && cannonController.shotActive == false) //If the player runs out of shots, and the last ball fired has despawned - the Lose screen will appear
             {
                 SceneManager.LoadScene("Lose");
 
