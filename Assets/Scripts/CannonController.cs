@@ -17,11 +17,14 @@ public class CannonController : MonoBehaviour
     public Transform ShotPoint;
     public bool shotActive = false;
     public VisualCannonBalls visualCannonBall;
-    string sceneName;
+    private string sceneName;
+
+    public AudioSource blastAudio;
 
     public void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+        
 
         // Retrieve the name of this scene.
         sceneName = currentScene.name;
@@ -89,6 +92,11 @@ public class CannonController : MonoBehaviour
         //A COROUTINE IS SET UP TO ALLOW THE FINAL SHOT TO LAST A FULL 10 SECONDS BEFORE THE LOSE SCREEN APPEARS - THIS ALLOWS ANY LAST SECOND ROLLS INTO HITTING A TARGET TO INCREASE SHOT COUNT
         if (Input.GetKeyDown(KeyCode.Space) && ShotCount > 0)
         {
+            //Play Audio
+            blastAudio.Play();
+
+
+
             visualCannonBall.DestroyVisualBall();
             StopAllCoroutines();
             shotActive = true;
@@ -103,14 +111,11 @@ public class CannonController : MonoBehaviour
             //THIS CREATES THE BLAST VFX WHEN FIRED
             GameObject BlastVFX = Instantiate(cannonVFX, ShotPoint.position, ShotPoint.rotation);
 
-
             //THIS FIRES THE BALL BASED ON THE CANNON ROTATION AND THE BLAST POWER SET
             CreatedCannonball.GetComponent<Rigidbody>().velocity = ShotPoint.transform.up * BlastPower;
             Destroy(CreatedCannonball, 10); //THIS WILL DESTROY THE CANNONBALL AFTER 10 SECONDS
             StartCoroutine(shotDeactivate()); //THIS WILL ACTIVATE A COROUTINE FOR ACTIVATING THE LOSE SCREEN
-        }
-        
-        
+        }        
     } 
 
     private IEnumerator shotDeactivate() //COROUTINE TO ALLOW ANY LAST SECOND ROLLS INTO HITTING A TARGET TO INCREASE SHOT COUNT - ENABLES THE SHOTCOUNT TO BE 0 WITHOUT IMMEDIATELY GOING TO A LOSE SCREEN
