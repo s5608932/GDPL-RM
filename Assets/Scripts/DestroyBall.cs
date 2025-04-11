@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class DestroyBall : MonoBehaviour
 {
 
     //THIS SCRIPT WILL DESTROY OBJECTS WHEN THEY FALL OFF THE PLATFORMS, AND COLLIDE WITH AN "EXIT CUBE"
-
-
-
     public CannonController cannonController;
 
 
@@ -16,9 +15,6 @@ public class DestroyBall : MonoBehaviour
     {
         cannonController = FindObjectOfType<CannonController>();
     }
-
-
-
 
     private void OnCollisionEnter(Collision other)
     {
@@ -28,16 +24,13 @@ public class DestroyBall : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-
-
-
         //IF A CAPSULE FALLS OFF THE MAP, WHETHER IT ROLLS OFF OR GETS KNOCKED OFF, THE BONUS IS STILL GIVEN
 
         if (other.gameObject.CompareTag ("GreenCapsule")) //GREEN CAPSULE AWARDS 3 EXTRA SHOTS
         {
             Destroy(other.gameObject); //DESTROY THE CAPSULE
             cannonController.ShotCount += 3;
-            print($"Shots = {cannonController.ShotCount}"); //PRINT TO DEBUG LOG
+            //print($"Shots = {cannonController.ShotCount}"); //PRINT TO DEBUG LOG
         }
 
 
@@ -45,7 +38,15 @@ public class DestroyBall : MonoBehaviour
         {
             Destroy(other.gameObject); //DESTROY THE CAPSULE
             cannonController.GameScore += 1;
-            print($"Score = {cannonController.GameScore}"); //PRINT TO DEBUG LOG
+            //print($"Score = {cannonController.GameScore}"); //PRINT TO DEBUG LOG
+        }
+
+        if (other.gameObject.CompareTag("RedCapsule")) //RED CAPSULE WINS - ONLY LEVEL 3
+        {
+            Destroy(other.gameObject); //DESTROY THE CAPSULE
+
+            SceneManager.LoadScene("Win"); //WIN GAME BY HITTING RED OFF PLATFORM
+
         }
     }
 

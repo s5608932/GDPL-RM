@@ -146,4 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2198aaef21fd34f865a7c1556b1cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shots: {fileID: 0}
+  cannonController: {fileID: 0}
+  greenHit: 0
+  blueHit: 0
+  redHit: 0
+  win: 0

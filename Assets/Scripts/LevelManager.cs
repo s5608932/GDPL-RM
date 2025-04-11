@@ -7,10 +7,9 @@ public class LevelManager : MonoBehaviour
 {
     public CannonController cannonController;
     public HitCapsule hitCapsule;
-    string sceneName;
-    public DrawProjection drawProjection;
-
-
+    private string sceneName;
+    
+    
     /*
         LEVEL MANAGER SCRIPT 
         THIS SCRIPT IS WHERE WIN CONDITIONS CAN BE DEFINED (CHANGING GAMESCORE IN IF STATEMENTS)
@@ -19,10 +18,8 @@ public class LevelManager : MonoBehaviour
     */
     void Start()
     {
-
         cannonController = FindObjectOfType<CannonController>();
-
-
+        
 
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
@@ -33,6 +30,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Escape)) //If the player presses "Esc" then the application will close
         {
             print("Quit"); //Print for Debug testing
@@ -69,23 +67,16 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-
-        //ERROR IN HERE MAYBE?
         else if (sceneName == "Level3")
         {
-            drawProjection.renderOn = false; // DISABLES PROJECTION LINE
-            
-            if (hitCapsule.win == true && cannonController.shotActive == false) //If the score is 1 or greater, then the Win screen will load
-            {
-                SceneManager.LoadScene("Win");
-            }
+            //WIN HANDLED WHEN CAPSULE IS HIT - "HitCapsule.cs" Script
 
-            if (cannonController.ShotCount == 0 && cannonController.shotActive == false) //If the player runs out of shots, and the last ball fired has despawned - the Lose screen will appear
+            //LOSE
+            if (cannonController.shotActive == false && cannonController.ShotCount == 0) //If the ball fired has despawned - the Lose screen will appear
             {
                 SceneManager.LoadScene("Lose");
 
             }
         }
-
     }
 }

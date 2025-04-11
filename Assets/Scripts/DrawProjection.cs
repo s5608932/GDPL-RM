@@ -37,7 +37,7 @@ public class DrawProjection : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            renderOn ^= true; //^= creates a toggle
+            renderOn ^= true; // ^= creates a toggle
         }
 
         if (sceneName == "Level3") // disable projection for Level3

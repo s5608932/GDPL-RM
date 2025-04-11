@@ -258,8 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannonController: {fileID: 1775721250}
-  hitCapsule: {fileID: 0}
-  drawProjection: {fileID: 1844676592}
+  hitCapsule: {fileID: -788998155267603926, guid: 56165213e79f4514abf9c9b07fa5e1a6, type: 3}
 --- !u!4 &60807605
 Transform:
   m_ObjectHideFlags: 0
@@ -290,8 +289,6 @@ MonoBehaviour:
   RedCapsule: {fileID: 5019481789022848261, guid: bdd4b34cef136df44b59bb49b1c5a80e, type: 3}
   Obstacle: {fileID: 5254271530935260082, guid: 28c509db5339289439c63e1857a25af7, type: 3}
   PlatformMiddle: {fileID: 9121114218732557408, guid: b8d243fd0d8fd92499bbf447d72c0101, type: 3}
-  PlatformNum:
-  - {x: 0, y: 0, z: 0}
 --- !u!1 &234295447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,7 +3021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1785996008
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3041,7 +3038,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175, y: -494}
+  m_AnchoredPosition: {x: 175, y: -584}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1785996009

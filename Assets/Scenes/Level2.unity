@@ -153,8 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannonController: {fileID: 1775721250}
-  hitCapsule: {fileID: 0}
-  drawProjection: {fileID: 1844676592}
+  hitCapsule: {fileID: -788998155267603926, guid: 56165213e79f4514abf9c9b07fa5e1a6, type: 3}
 --- !u!4 &14097540
 Transform:
   m_ObjectHideFlags: 0
