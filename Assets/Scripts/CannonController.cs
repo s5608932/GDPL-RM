@@ -96,7 +96,6 @@ public class CannonController : MonoBehaviour
             blastAudio.Play();
 
 
-
             visualCannonBall.DestroyVisualBall();
             StopAllCoroutines();
             shotActive = true;

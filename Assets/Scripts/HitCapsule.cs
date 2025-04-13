@@ -25,19 +25,15 @@ public class HitCapsule : MonoBehaviour
     {
         if (other.gameObject.tag == ("GreenCapsule"))
         {
-            
             Destroy(other.gameObject);
             cannonController.ShotCount += 3;
-            
         }
 
 
         if (other.gameObject.tag == ("BlueCapsule"))
         {
-            
             Destroy(other.gameObject);
             cannonController.GameScore += 1;
-            
         }
 
         if (other.gameObject.tag == ("RedCapsule"))
